@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 # FizzBuzz
 
-for i in {1..100} # Use i to loop from "1" to "100", inclusive.
-do  ((i % 3)) &&  # If i is not divisible by 3...
-        x= ||     # ...blank out x (yes, "x= " does that).  Otherwise,...
-        x=Fizz    # ...set (not append) x to the string "Fizz".
-    ((i % 5)) ||  # If i is not divisible by 5, skip (there's no "&&")...
-        x+=Buzz   # ...Otherwise, append (not set) the string "Buzz" to x.
-   echo ${x:-$i}  # Print x unless it is blanked out.  Otherwise, print i.
+for ((i=1;i<=100;i++)); do
+    if ! ((i%15)); then
+        echo FizzBuzz
+    elif ! ((i%3)); then
+        echo Fizz
+    elif ! ((i%5)); then
+        echo Buzz
+    else
+        echo "$i"
+    fi;
 done
