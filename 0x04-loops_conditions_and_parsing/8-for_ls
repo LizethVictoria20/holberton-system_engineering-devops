@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# For ls
+find ls | cut -d "-" -f2
