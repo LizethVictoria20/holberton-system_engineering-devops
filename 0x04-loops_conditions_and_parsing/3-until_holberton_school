@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 # displays Holberton School 10 times with until
-TEXT="Holberton School"
 i=0
 
 until [ $i -ge 10 ]
 do
-  echo "$TEXT"
+  echo "Holberton School"
   ((i++))
 done
