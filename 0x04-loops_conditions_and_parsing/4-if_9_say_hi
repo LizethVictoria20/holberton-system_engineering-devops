@@ -6,10 +6,9 @@ i=0
 while [ $i -le 9 ]
 do
     i=$(( i + 1 ))
-    if [ $i != 9 ]
+    echo "$TEXT0"
+    if [ $i == 9 ]
     then
-        echo "$TEXT0"
-    else
         echo "$TEXT1"
     fi
 done
