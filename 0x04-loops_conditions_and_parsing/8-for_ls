@@ -1,3 +1,9 @@
 #!/usr/bin/env bash
 # For ls
-find ls | cut -d "-" -f2
+LIST="$(ls)"
+i=0
+for i in $LIST; 
+do
+    NEWLIST=$(ls "$i" | cut -d "-" -f2)
+    echo "$NEWLIST"
+done
