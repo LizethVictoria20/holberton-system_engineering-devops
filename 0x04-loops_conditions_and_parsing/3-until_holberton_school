@@ -5,6 +5,6 @@ i=0
 
 until [ $i -ge 10 ]
 do
-  echo $TEXT
+  echo "$TEXT"
   ((i++))
 done
