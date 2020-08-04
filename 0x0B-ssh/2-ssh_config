@@ -1,0 +1,8 @@
+# Client configuration file
+Host *
+	SendEnv LANG LC_*
+	PasswordAuthentication no
+	IdentityFile ~/.ssh/holberton
+    HashKnownHosts yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials no
