@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Transfer a file to your server
+scp 0-transfer_file ubuntu@34.75.246.108:~/
