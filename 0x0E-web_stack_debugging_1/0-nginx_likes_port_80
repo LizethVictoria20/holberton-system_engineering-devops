@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Nginx likes port 80
-sudo apt install lsof
-lsof -i :80 | gerp -v COMMAND | awk '{s=split($2,t,"/"); print t[s-1]}' | xargs kill
+direction="8080 default_server"
+redirection="80 default_server"
+sed -i "s/$string/$new_string/" /etc/nginx/sites-enabled/default
+service nginx restart
