@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
 # Nginx likes port 80
-sudo apt install lsof
-lsof -i :80 | gerp -v COMMAND | awk '{s=split($2,t,"/"); print t[s-1]}' | xargs kill
+sudo netstat -tulpn | grep -w ':80' | grep -v nginx | awk '{s=split($NF,t,"/"); print t[1]}' | xargs kill -9
