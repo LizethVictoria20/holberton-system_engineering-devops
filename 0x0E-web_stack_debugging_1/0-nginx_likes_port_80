@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 # Nginx likes port 80
-sudo netstat -tulpn | grep -w ':80' | grep -v nginx | awk '{s=split($NF,t,"/"); print t[1]}' | xargs kill -9
+sudo sed -i 's|8080|80' /etc/nginx/sites-enable/default
+sudo service nginx restart
+sudo pkill -o nginx
