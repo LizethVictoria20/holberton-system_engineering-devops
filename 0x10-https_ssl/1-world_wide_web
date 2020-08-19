@@ -1,17 +1,20 @@
 #!/bin/bash
 # Functions and parameters
 
-if [ $# -eq 1 ];
-then
-    for i in www lb-01 web-01 web-02;
-    do
-        name=$(dig "$i"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
-        ip=$(dig "$i"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
-        echo "The subdomain $i is a $name record and points to $ip"
-    done
-elif [ $# -eq 2 ];
-then
-    name=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
-    ip=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
-    echo "The subdomain $2 is a $name record and points to $ip"
-fi
+func () {
+    if [ $# -eq 1 ];
+    then
+        for i in www lb-01 web-01 web-02;
+        do
+            name=$(dig "$i"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
+            ip=$(dig "$i"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
+            echo "The subdomain $i is a $name record and points to $ip"
+        done
+    elif [ $# -eq 2 ];
+    then
+        name=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $4}')
+        ip=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -1 | awk '{print $5}')
+        echo "The subdomain $2 is a $name record and points to $ip"
+    fi
+}
+func($@)
