@@ -5,4 +5,5 @@ sudo sed -i "21i \\\tlisten 8080 default_server;" /etc/nginx/sites-enabled/defau
 sudo sed -i "22i \\\tlisten [::]:8080 default_server ipv6only=on;" /etc/nginx/sites-enabled/default
 pkill apache2
 chown nginx:nginx nginx.conf
+chmod 700 nginx.conf
 sudo -u nginx service nginx start
