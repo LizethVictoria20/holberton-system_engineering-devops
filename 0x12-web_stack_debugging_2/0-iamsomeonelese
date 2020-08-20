@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Execute "whoiam" in someone's else behalf.
+
+sudo -u "$1" whoami
