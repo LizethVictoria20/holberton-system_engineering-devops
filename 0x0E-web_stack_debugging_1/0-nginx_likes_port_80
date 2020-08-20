@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Nginx likes port 80
-sudo sed -i 's|8080|80' /etc/nginx/sites-enable/default
+sudo sed -i "21i \\\tlisten 80 default_server;" /etc/nginx/sites-enabled/default
+sudo sed -i "22i \\\tlisten [::]:80 default_server ipv6only=on;" /etc/nginx/sites-enabled/default
 sudo service nginx restart
-sudo pkill -o nginx
