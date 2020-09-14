@@ -16,7 +16,7 @@ def f_json(users=None, todos=None):
             json.dump(data, file)
 
 if __name__ == "__main__":
-    """[Function initial]"""
+    """[Function initials]"""
     if len(sys.argv) == 2 and sys.argv[1].isdigit():
         args_id = {"id": sys.argv[1]}
         users = requests.get("https://jsonplaceholder.typicode.com/users",
