@@ -13,8 +13,8 @@ def f_json(users=None, todos=None, userId=None):
             data.append({"task": i.get("title"),
                          "completed": i.get("completed"),
                          "username": users[0].get("username")})
-            file_json = {str(userId): data}
-            json.dump(file_json, file)
+        file_json = {str(userId): data}
+        json.dump(file_json, file)
 
 if __name__ == "__main__":
     """[Function initials]"""
