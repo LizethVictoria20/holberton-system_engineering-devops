@@ -5,7 +5,7 @@ import requests
 import sys
 
 
-def f_json(users=None, todos=None):
+def f_json(users=None, todos=None, userId=None):
     """Export to CSV"""
     data = []
     with open(sys.argv[1] + ".json", "w") as file:
@@ -13,7 +13,8 @@ def f_json(users=None, todos=None):
             data.append({"task": i.get("title"),
                          "completed": i.get("completed"),
                          "username": users[0].get("username")})
-            json.dump(data, file)
+            file_json = {str(userId): data}
+            json.dump(file_json, file)
 
 if __name__ == "__main__":
     """[Function initials]"""
@@ -30,4 +31,4 @@ if __name__ == "__main__":
             if i.get("completed"):
                 number_task.append(i)
                 done_task += 1
-            f_json(users, todos)
+            f_json(users, todos, sys.argv[1])
