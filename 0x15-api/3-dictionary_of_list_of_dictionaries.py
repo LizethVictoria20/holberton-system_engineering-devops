@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Dictionary of list of dictionaries """
+"""Script that uses REST API"""
 import json
 import requests
 
