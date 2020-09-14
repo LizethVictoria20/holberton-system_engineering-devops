@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """Export to CSV"""
+import csv
 import requests
 import sys
-import csv
 
 
 def f_csv(users=None, todos=None):
