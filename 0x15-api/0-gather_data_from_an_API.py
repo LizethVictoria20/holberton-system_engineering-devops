@@ -6,12 +6,12 @@ import sys
 if __name__ == "__main__":
     """[Function initial]"""
     if len(sys.argv) == 2 and sys.argv[1].isdigit():
-        args = {"id": sys.argv[1]}
+        args_id = {"id": sys.argv[1]}
         users = requests.get("https://jsonplaceholder.typicode.com/users",
-                             params=args).json()
-        args = {"userId": sys.argv[1]}
+                             params=args_id).json()
+        args_userid = {"userId": sys.argv[1]}
         todos = requests.get("https://jsonplaceholder.typicode.com/todos",
-                             params=args).json()
+                             params=args_userid).json()
         done_task = 0
         number_task = []
         for i in todos:
