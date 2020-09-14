@@ -10,7 +10,7 @@ def f_csv(users=None, todos=None):
     data = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
 
     with open(sys.argv[1] + ".csv", "w") as File:
-        write = csv.DictWriter(File, fieldnames=data)
+        write = csv.DictWriter(File, fieldnames=data, quoting=csv.QUOTE_ALL)
         for row in todos:
             write.writerow({"USER_ID": i.get("userId"),
                             "USERNAME": users[0].get("username"),
