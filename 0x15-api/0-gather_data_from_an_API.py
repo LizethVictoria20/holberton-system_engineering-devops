@@ -6,6 +6,7 @@ import sys
 
 
 if __name__ == "__main__":
+    """Function initial"""
     if len(sys.argv) == 2 and sys.argv[1].isdigit():
         args = {"id": sys.argv[1]}
         users = requests.get("https://jsonplaceholder.typicode.com/users",
