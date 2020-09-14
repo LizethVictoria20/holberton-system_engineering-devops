@@ -6,6 +6,7 @@ import csv
 
 
 def f_csv(users=None, todos=None):
+    """Export to CSV"""
     data = ["USER_ID", "USERNAME", "TASK_COMPLETED_STATUS", "TASK_TITLE"]
 
     with open(sys.argv[1] + ".csv", "w") as File:
