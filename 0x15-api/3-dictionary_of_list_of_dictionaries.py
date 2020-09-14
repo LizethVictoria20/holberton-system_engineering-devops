@@ -1,27 +1,28 @@
 #!/usr/bin/python3
-"""Script that uses REST API"""
+"""Dictionary of list of dictionaries """
 import json
 import requests
 
 
-def make_all(users=None, todos=None):
-    """Turns all payloads into JSON format"""
-    all_list = []
-    alljson = {}
-    with open("todo_all_employees.json", "w") as f:
+def f_json(users=None, todos=None):
+    """Export to CSV"""
+    data = []
+    user_id = {}
+    with open("todo_all_employees.json", "w") as file:
         for i in users:
-            u = i.get("id")
+            user = i.get("id")
             for i in todos:
-                if u == i.get("userId"):
-                    all_list.append({"username": users[0].get("username"),
-                                     "task": i.get("title"),
-                                     "completed": i.get("completed")})
-            alljson[u] = all_list
-        json.dump(alljson, f)
+                if user == i.get("userId"):
+                    data.append({"username": users[0].get("username"),
+                                 "task": i.get("title"),
+                                 "completed": i.get("completed")})
 
+            user_id[user] = data
+        json.dump(user_id, file)
 
 if __name__ == "__main__":
+    """[Function initials]"""
     users = requests.get("https://jsonplaceholder.typicode.com/users/").json()
     todos = requests.get("https://jsonplaceholder.typicode.com/todos/").json()
 
-    make_all(users, todos)
+    f_json(users, todos)
