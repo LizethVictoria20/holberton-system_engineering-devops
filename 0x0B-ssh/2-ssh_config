@@ -1,8 +1,9 @@
 # Client configuration file
+# File found in /etc/ssh in server
 Host *
 	SendEnv LANG LC_*
 	PasswordAuthentication no
 	IdentityFile ~/.ssh/holberton
-    HashKnownHosts yes
-    GSSAPIAuthentication yes
-    GSSAPIDelegateCredentials no
+  HashKnownHosts yes
+  GSSAPIAuthentication yes
+  GSSAPIDelegateCredentials no
