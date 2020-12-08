@@ -1,4 +1,4 @@
-# Client configuration file
+# Client configuration file...
 file_line {
   ensure => 'present'
   path => '/etc/ssh/ssh_config',
