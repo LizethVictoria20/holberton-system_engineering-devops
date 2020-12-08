@@ -7,5 +7,5 @@ file_line {
 file_line {
   ensure => 'present'
   path => '/etc/ssh/ssh_config',
-  line => ' IdentityFile /home/vagrant/.ssh'
+  line => ' IdentityFile /home/vagrant/.ssh/holberton'
 }
