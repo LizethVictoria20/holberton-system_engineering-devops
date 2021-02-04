@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    Function Sub
+    Funtion Sub
 """
 import json
 import requests
@@ -9,10 +9,10 @@ import requests
 def top_ten(subreddit):
     url = 'https://www.reddit.com/'
     url_subreddit = (url + '/r/' + subreddit + '/hot.json?limit=10')
-    userAgent = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)\
+    headers = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)\
     AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"}
 
-    r_subreddit = requests.get(url_subreddit, userAgent=userAgent)
+    r_subreddit = requests.get(url_subreddit, headers=headers)
     if r_subreddit.status_code != 200:
         print('None')
         return 0
