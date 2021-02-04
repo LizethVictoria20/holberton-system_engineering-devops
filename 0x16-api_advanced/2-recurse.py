@@ -10,7 +10,8 @@ def recurse(subreddit, hot_list=[], after=""):
 
     url_base = 'http://www.reddit.com/r/'
     url_query = '{:s}/hot.json'.format(subreddit)
-    headers = {'user-agent': 'Client'}
+    headers = {'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)\
+    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36'}
     r = requests.get(url_base + url_query, headers=headers)
 
     if (r.status_code is 302):
