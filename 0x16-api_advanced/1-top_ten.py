@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+    Function Sub
+"""
 import json
 import requests
 
@@ -6,17 +9,15 @@ import requests
 def top_ten(subreddit):
     url = 'https://www.reddit.com/'
     url_subreddit = (url + '/r/' + subreddit + '/hot.json?limit=10')
-    headers = {"User-Agent": "Client"}
+    userAgent = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6)\
+    AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.96 Safari/537.36"}
 
-    # Get data response whit requests
-    r_subreddit = requests.get(url_subreddit, headers=headers)
+    r_subreddit = requests.get(url_subreddit, userAgent=userAgent)
     if r_subreddit.status_code != 200:
         print('None')
         return 0
 
-    # Set string to JSON
     obj_subreddit = r_subreddit.json()
 
-    # Print number of children
     for children in obj_subreddit['data']['children']:
         print(children['data']['title'])
